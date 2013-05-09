@@ -1,0 +1,168 @@
+<robot name="simple_goal">
+  <link name="my_goal">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value=".5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".05 .5 1.5" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".05 .5 1.5" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="my_goal_arm_a">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value=".5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".5 .05 1.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".5 .05 1.5" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="my_goal_arm_b">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value=".5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".5 .05 1.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".5 .05 1.5" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="my_goal_arm_a_block">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value=".5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".05 .15 1.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".05 .15 1.5" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="my_goal_arm_b_block">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value=".5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".05 .15 1.5"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".05 .15 1.5" />
+      </geometry>
+    </collision>
+  </link>
+
+
+  <joint name="arm_joint_a" type="continuous">
+    <parent link="my_goal"/>
+    <child link="my_goal_arm_a"/>
+    <origin rpy="0 0 0" xyz="-.25 .225 -.725"/>
+  </joint>
+
+  <joint name="arm_joint_b" type="continuous">
+    <parent link="my_goal"/>
+    <child link="my_goal_arm_b"/>
+    <origin rpy="0 0 0" xyz="-.25 -.225 -.725"/>
+  </joint>
+
+  <joint name="arm_joint_a_block" type="continuous">
+    <parent link="my_goal_arm_a"/>
+    <child link="my_goal_arm_a_block"/>
+    <origin rpy="0 0 0" xyz="-.225 -.05 -.725"/>
+  </joint>
+
+  <joint name="arm_joint_b_block" type="continuous">
+    <parent link="my_goal_arm_b"/>
+    <child link="my_goal_arm_b_block"/>
+    <origin rpy="0 0 0" xyz="-.225 .05 -.725"/>
+  </joint>
+
+  <joint name="arm_joint_aa" type="continuous">
+    <parent link="my_goal"/>
+    <child link="my_goal_arm_a"/>
+    <origin rpy="0 0 0" xyz="-.25 .225 .725"/>
+  </joint>
+
+  <joint name="arm_joint_bb" type="continuous">
+    <parent link="my_goal"/>
+    <child link="my_goal_arm_b"/>
+    <origin rpy="0 0 0" xyz="-.25 -.225 .725"/>
+  </joint>
+
+  <joint name="arm_joint_a_blocka" type="continuous">
+    <parent link="my_goal_arm_a"/>
+    <child link="my_goal_arm_a_block"/>
+    <origin rpy="0 0 0" xyz="-.225 -.05 .725"/>
+  </joint>
+
+  <joint name="arm_joint_b_blockb" type="continuous">
+    <parent link="my_goal_arm_b"/>
+    <child link="my_goal_arm_b_block"/>
+    <origin rpy="0 0 0" xyz="-.225 .05 .725"/>
+  </joint>
+
+  <gazebo reference="my_goal">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="my_goal_arm_a">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="my_goal_arm_b">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="my_goal_arm_a_block">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="my_goal_arm_b_block">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+
+</robot>

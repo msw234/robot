@@ -1,0 +1,119 @@
+<robot name="walls">
+  <link name="wall_b">
+    <inertial>
+      <origin xyz="0 0 0" /> 
+      <mass value="5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".1 2 1" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".1 2 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wall_l">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="2 .1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="2 .1 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wall_r">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="2 .1 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size="2 .1 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <link name="wall_f">
+    <inertial>
+      <origin xyz="0 0 0" />
+      <mass value="5" />
+      <inertia  ixx="1.0" ixy="0.0"  ixz="0.0"  iyy="1.0"  iyz="0.0"  izz="1.0" />
+    </inertial>
+    <visual>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".1 2 1"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0"/>
+      <geometry>
+        <box size=".1 2 1" />
+      </geometry>
+    </collision>
+  </link>
+
+  <joint name="wall_joint1" type="continuous">
+    <parent link="wall_b"/>
+    <child link="wall_l"/>
+    <origin rpy="0 0 0" xyz="-1 7 0"/>
+  </joint>
+
+  <joint name="wall_joint2" type="continuous">
+    <parent link="wall_b"/>
+    <child link="wall_r"/>
+    <origin rpy="0 0 0" xyz="-1 -1 0"/>
+  </joint>
+
+  <joint name="wall_joint3" type="continuous">
+    <parent link="wall_l"/>
+    <child link="wall_f"/>
+    <origin rpy="0 0 0" xyz="7 -7 0"/>
+  </joint>
+
+  <joint name="wall_joint4" type="continuous">
+    <parent link="wall_r"/>
+    <child link="wall_f"/>
+    <origin rpy="0 0 0" xyz="7 -1 0"/>
+  </joint>
+
+  <gazebo reference="wall_b">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="wall_l">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="wall_r">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+  <gazebo reference="wall_f">
+    <material>Gazebo/Blue</material>
+  </gazebo>
+
+</robot>

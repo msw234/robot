@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "THIS IS WORKING"
+roslaunch pr2_gazebo pr2_empty_world.launch

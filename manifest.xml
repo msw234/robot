@@ -1,0 +1,17 @@
+<package>
+  <description brief="golf_swing">
+
+     golf_swing
+
+  </description>
+  <author>General Account</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/golf_swing</url>
+  <depend package="roscpp"/>
+  <depend package="actionlib"/>
+  <depend package="arm_navigation_msgs"/>
+
+</package>
+
+
